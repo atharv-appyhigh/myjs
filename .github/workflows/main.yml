@@ -53,4 +53,4 @@ jobs:
       run: echo '${{ toJSON(fromJson(needs.diff.outputs.diff)[matrix.module]) }}'
     -
       name: Print files
-      run: cat '${{ toJSON(fromJson(needs.diff.outputs.diff)[matrix.module].files.all[0]) }}'
+      run: echo '$(<{{ toJSON(fromJson(needs.diff.outputs.diff)[matrix.module].files.all[0]) }})'
