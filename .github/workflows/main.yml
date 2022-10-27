@@ -70,7 +70,7 @@ jobs:
         run: echo '${{ matrix.module }}'
       -
         name: Print diff
-        run: cat ${${ toJSON(fromJson(needs.diff.outputs.diff)[matrix.module]) }.modified[0]}
+        run: cat '${{ toJSON(fromJson(needs.diff.outputs.diff)[matrix.module]) }}'
       -
         name: Print files
         if: '${{ fromJson(needs.diff.outputs.diff)[matrix.module].changed }}'
